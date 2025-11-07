@@ -11,6 +11,15 @@
 				<SearchField
 					width="50%"
 					search=".onFilterInvoices"/>
+				<ComboBox
+					width="15%"
+					selectedKey="{status>/defaultKey}"
+					items="{
+						path: 'status>/statuses'
+					}"
+					selectionChange=".onFilterInvoicesByStatus">
+					<core:Item key="{status>key}" text="{status>text}"/>
+				</ComboBox>
 			</Toolbar>
 		</headerToolbar>
 		<Table
