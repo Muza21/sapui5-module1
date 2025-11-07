@@ -32,7 +32,7 @@
                 title="{invoice>Quantity} x {invoice>ProductName}"
                 number="{
                     parts: [
-                        'invoice>ExTendedPrice',
+                        'invoice>ExtendedPrice',
                         'view>/currency'
                     ],
                     type: 'Currency',
@@ -41,11 +41,13 @@
                     }
                 }"
                 numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+                type="Navigation"
+                press=".onPress" >
                 <firstStatus>
                     <ObjectStatus
                         core:require="{
-                            Formatter: 'ui5/walkthrough/model/formatter'
+                          Formatter: 'ui5/walkthrough/model/formatter'
                         }"
                         text="{
                             path: 'invoice>Status',
